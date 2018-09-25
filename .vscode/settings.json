@@ -1,0 +1,9 @@
+{
+    "appService.zipIgnorePattern": [
+        "node_modules{,/**}"
+    ],
+    "appService.defaultWebAppToDeploy": "/subscriptions/38bb2937-e5eb-4cad-8910-1bb1e3a9289b/resourceGroups/appsvc_rg_linux_centralus/providers/Microsoft.Web/sites/steencamp",
+    "appService.deploySubpath": "",
+    "git.ignoreLimitWarning": true,
+    "files.eol": "\n"
+}
