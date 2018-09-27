@@ -24,6 +24,7 @@ router.get('/', function (req, res) {
 router.post('/', middleware.isLoggedIn, function (req, res) {
     //get data from form and add to campgrounds
     var name = req.body.name;
+    var price = req.body.price;
     var image = req.body.image;
     var desc = req.body.description;
     var author = {
@@ -32,6 +33,7 @@ router.post('/', middleware.isLoggedIn, function (req, res) {
     };
     var newCampground = {
         name: name,
+        price: price,
         image: image,
         author: author,
         description: desc
@@ -42,6 +44,7 @@ router.post('/', middleware.isLoggedIn, function (req, res) {
             console.log(err);
         } else {
             //redirect back to campground page
+            req.flash('success', 'Campground Created!');
             res.redirect('/campgrounds');
         }
     });
@@ -79,6 +82,7 @@ router.put("/:id", middleware.checkCampgroundOwnership, function (req, res) {
         if (err) {
             res.redirect("/campgrounds");
         } else {
+            req.flash('success', 'Campground has been updated!');
             res.redirect("/campgrounds/" + req.params.id);
         }
     });
@@ -90,6 +94,7 @@ router.delete("/:id", middleware.checkCampgroundOwnership, function (req, res) {
         if (err) {
             res.redirect("/campgrounds");
         } else {
+            req.flash('success', 'Campground deleted');
             res.redirect("/campgrounds");
 
         }
