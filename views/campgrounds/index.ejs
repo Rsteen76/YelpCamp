@@ -13,8 +13,8 @@
     <div class="row">
         <% campgrounds.forEach(function(campground){ %>
         <div class="col-md-3 col-sm-6">
-            <div class="card mt-4" id="campground">
-                <img class="card-img-top img-flex h-50" src="<%= campground.image %>">
+            <div class="card mt-4 d-flex" id="campground">
+                <img id="indexImage" class="card-img-top flex-fill" src="<%= campground.image %>">
                 <div class="card-body">
                 <div class= "text-center">
                     <h5 class="card-text">
